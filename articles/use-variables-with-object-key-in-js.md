@@ -9,7 +9,7 @@ published: true
 似たような内容の記事はいくつかあったので，忘れないように自分用のメモとして書きます。タイトルの通り，JavaScriptでObjectのKeyに変数展開する方法についてです。
 
 ## JavaScriptのObjectについておさらい
-JavaScriptのObjectはJSONと似ていますが，Keyにクオーテーションマークを使わなくてよかったり，Valueに関数を入れたりできるなど汎用性が高くなっています。
+JavaScriptのObjectはJSONと似ていますが，Keyにクオーテーションマークを使わなくてよかったり，Valueに関数を入れられたりなど汎用性が高くなっています。
 
 ```javascript
 const person = {
