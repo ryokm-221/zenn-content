@@ -3,7 +3,7 @@ title: "Amplify GraphQL APIをLambda Functionから操作する"
 emoji: "⛳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["aws", "amplify", "graphql"]
-published: false
+published: true
 ---
 こんにちは，[@ry_km](https://twitter.com/ry_km_u_u)です。
 
