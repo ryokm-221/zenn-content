@@ -3,7 +3,7 @@ title: "ぼくのかんがえたさいきょうのLambdaローカル開発法（
 emoji: "🍣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["aws", "Lambda", "localstack", "terraform"]
-published: false
+published: true
 ---
 
 久しぶりの投稿です。[@ry_km](https://twitter.com/ry_km_u_u)です。
