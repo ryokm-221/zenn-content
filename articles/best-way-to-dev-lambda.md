@@ -6,6 +6,10 @@ topics: ["aws", "Lambda", "localstack", "terraform"]
 published: true
 ---
 
+:::message
+Terraformのapplyが一部正常に動作しなかったため，記事中およびGitHubに公開中のビルドスクリプトを修正しました（2022/8/16）
+:::
+
 久しぶりの投稿です。[@ry_km](https://twitter.com/ry_km_u_u)です。
 
 突然ですが，AWSのLambda関数開発って皆さんどうやって行なっていますか？コンソールがあるので直打ちしたくなりますよね！？
@@ -222,9 +226,10 @@ done
 
 ```bash:sample-build.sh
 #!/bin/bash -e
+cwd="$(pwd)"
 rm -f terraform/lambda_func.zip
 zip "terraform/lambda_func.zip" node_modules/ index.js package.json package-lock.json
-npm run build
+cd terraform && docker run --rm -it -v "$(pwd)":/app --net localstack_default tflocal:0.2 "apply" "-auto-approve" && cd $cwd
 ```
 
 watchmanを実行します。
@@ -286,7 +291,6 @@ $ awslocal logs tail --follow "/aws/lambda/func_sample"
     "tflocal": "docker run --rm -it -v \"$(pwd)\":/app --net localstack_default tflocal:0.2",
     "localstack:run": "docker-compose -f localstack/docker-compose.yml up -d",
     "test": "npm run awslocal -- lambda invoke --function-name func_sample --payload '{ \"Id\": \"test1\", \"Item\": \"banana\" }' --cli-binary-format raw-in-base64-out /app/result.log",
-    "build": "cd terraform && npm run tflocal -- apply -auto-approve",
     "watch:build": "sh hot-reload.sh . \"sh sample-build.sh\"",
     "watch:logs": "npm run awslocal -- logs tail --follow",
     "check:logs": "npm run awslocal -- logs describe-log-groups --query logGroups[0].logGroupName"
