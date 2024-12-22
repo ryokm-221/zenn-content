@@ -3,7 +3,7 @@ title: "Stripeで0円決済を実装する時の注意点"
 emoji: "🐹"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["stripe"]
-published: false
+published: true
 ---
 この記事は、[Stripe / JP_Stripes Advent Calendar 2024](https://qiita.com/advent-calendar/2024/stripe)シリーズ2・22日目に掲載しています。
 
