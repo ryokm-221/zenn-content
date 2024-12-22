@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/ryokm-221/zenn-content#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.106"
+    "zenn-cli": "^0.1.158"
   }
 }
